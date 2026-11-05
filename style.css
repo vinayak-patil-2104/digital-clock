@@ -16,7 +16,7 @@
     --body-text: clamp(1.4rem, 3vw, 2rem);
     --medium-text: clamp(1.8rem, 4vw, 2.5rem);
     --large-text: clamp(3rem, 6vw, 5rem);
-    --xlarge-text: clamp(4rem, min(12vw, 25vh), 16rem);
+    --xlarge-text: clamp(4rem, min(10vw, 20vh), 16rem);
     /* Weights */
     --normal-text: 400;
     --semibold-text: 600;
