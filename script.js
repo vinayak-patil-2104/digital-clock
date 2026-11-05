@@ -1,10 +1,10 @@
-// Grab the elements from the HTML using their IDs
+// Getting html elements
 const timeText = document.getElementById("time-text");
 const dateText = document.getElementById("header-date");
 const dayText = document.getElementById("header-day");
 const greetingText = document.getElementById("greetings-text");
 
-// getDay() gives a number (0-6), so we use this list to get the name
+// Days array
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function getGreeting(hour) {
@@ -25,22 +25,15 @@ function getGreeting(hour) {
 function updateClock() {
     const now = new Date();
 
-    // Time, e.g. "10:01:55 AM"
+    // Time
     timeText.textContent = now.toLocaleTimeString("en-US");
-
-    // Date, e.g. "4/11/2026" (day/month/year)
     // getMonth() starts from 0, so we add 1
     dateText.textContent = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
-
-    // Day name, e.g. "Wednesday"
+    // Day name
     dayText.textContent = days[now.getDay()];
-
     // Greeting based on the current hour
     greetingText.textContent = getGreeting(now.getHours());
 }
 
-// Run once immediately so the page doesn't wait 1 second to show the time
 updateClock();
-
-// Then repeat every 1000 ms (1 second)
 setInterval(updateClock, 1000);
